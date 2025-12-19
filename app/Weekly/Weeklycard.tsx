@@ -10,7 +10,7 @@ export default async function WeeklyCard({ which }: { which: string }) {
   return (
     <>
       <h1 className="text-2xl font-bold  mt-10 mb-5">
-        <Link href="/Weekly">{which}</Link>
+        <Link href="/Weekly" className="underline">{which}</Link>
       </h1>
       <div className="flex flex-wrap justify-around gap-5 ">
         {movies.slice(0, 6).map((movie) => (

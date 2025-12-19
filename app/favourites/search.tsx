@@ -40,7 +40,7 @@ export default function Search() {
       </div>
       {searchResults.length > 0 && (
         <div
-          className="text-white absolute right-40 top-7 p-5 border-2 border-gray-500 rounded-2xl h-100 overflow-y-scroll bg-black max-w-100"
+          className="text-white absolute sm:right-30 sm:top-7 p-5 border-2 border-gray-500 rounded-2xl h-100 overflow-y-scroll bg-black max-w-100"
           style={{ scrollbarWidth: "none" }}
         >
           <p className="font-bold text-2xl text-center mb-5">Search Results</p>

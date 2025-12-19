@@ -10,7 +10,7 @@ export default async function TopCard({ which }: { which: string }) {
   return (
     <>
       <h1 className="text-2xl font-bold  mt-10 mb-5">
-        <Link href="/New">{which}</Link>
+        <Link href="/Top" className="underline">{which}</Link>
       </h1>
       <div className="flex flex-wrap justify-around gap-5 ">
         {movies.slice(0, 6).map((movie) => (
