@@ -29,7 +29,7 @@ export default async function Getmovies() {
                 alt={movie.title}
                 width="300"
                 height="100"
-                className=" w-[100%] sm:w-[80%] h-[100%] rounded-xl m-auto"
+                className=" w-full sm:w-[80%] h-full rounded-xl m-auto"
               />
             </Link>
             <div className="sm:w-[50%] sm:overflow-y-scroll" style={{scrollbarWidth: "none"}}>
