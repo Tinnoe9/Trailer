@@ -1,5 +1,4 @@
-import Image from "next/image";
-import Link from "next/link";
+
 import DailyCard from "./card";
 import WeeklyCard from "./Weekly/Weeklycard";
 import Search from "./favourites/search";
@@ -13,10 +12,10 @@ export default function Home() {
           <h1 className=" text-5xl font-bold">Trailer</h1>
         </div>
         <Search />
-      </div>
-      <TopCard which="TMDB Top >" />
+      </div> 
       <DailyCard which="Daily Trending >" />
       <WeeklyCard which="Weekly Trending >" />
+      <TopCard which="TMDB Top >" />
     </div>
   );
 }

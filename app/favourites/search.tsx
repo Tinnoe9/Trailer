@@ -1,5 +1,5 @@
 "use client";
-
+import { Fragment } from "react";
 import { link } from "fs";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -29,16 +29,20 @@ export default function Search() {
 
   console.log(searchResults);
   return (
-    <>
-      <div className="w[100%] sm:w-[50%] ">
+    <div className="w[100%] sm:w-[50%] relative">
+      <div>
         <input
           type="text"
           onChange={handleSearch}
           placeholder="Search"
-          className="w-full sm:w-[40%] h-[30px] p-2.5 rounded-[25px] outline-0 border-2 border-gray-500"/>
+          className="w-full sm:w-[40%] h-[30px] p-2.5 rounded-[25px] outline-0 border-2 border-gray-500"
+        />
       </div>
       {searchResults.length > 0 && (
-        <div className="text-white absolute right-20 top-18 p-5 border-2 border-gray-500 rounded-2xl h-100 overflow-y-scroll bg-black">
+        <div
+          className="text-white absolute right-40 top-7 p-5 border-2 border-gray-500 rounded-2xl h-100 overflow-y-scroll bg-black max-w-100"
+          style={{ scrollbarWidth: "none" }}
+        >
           <p className="font-bold text-2xl text-center mb-5">Search Results</p>
           {searchResults.map((movie: any) => (
             <Link
@@ -57,6 +61,6 @@ export default function Search() {
           ))}
         </div>
       )}
-    </>
+    </div>
   );
 }

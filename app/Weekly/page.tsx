@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import Back from "../Details/[id]/back"
 
 export default async function Getmovies() {
   const res = await fetch(
@@ -9,13 +10,16 @@ export default async function Getmovies() {
   const movies: any[] = data.results;
   return (
     <div className="bg-black text-white px-5 py-5 tracking-wide">
-      <h1 className="text-3xl font-bold text-center mt-5 mb-5">
-        Weekly Top Movies
-      </h1>
+      <div className="flex items-center justify-between">
+        <Back/>
+        <h1 className="text-3xl font-bold text-center mt-5 mb-5">
+          Weekly Top Movies
+        </h1>
+      </div>
       <hr />
       <div className="flex flex-wrap justify-evenly gap-5 mt-5 ">
         {movies.map((movie) => (
-          <div key={movie.id} className="w-70">
+          <div key={movie.id} className="w-70 flex flex-col grow">
             <Link href={`/Details/${movie.id}`}>
               <div className="mb-2 l">
                 <Image
@@ -23,6 +27,7 @@ export default async function Getmovies() {
                   alt={movie.title}
                   width="350"
                   height="300"
+                  className="rounded-xl"
                 />
               </div>
             </Link>

@@ -14,7 +14,7 @@ export default async function TopCard({ which }: { which: string }) {
       </h1>
       <div className="flex flex-wrap justify-around gap-5 ">
         {movies.slice(0, 6).map((movie) => (
-          <div key={movie.id} className="w-50">
+          <div key={movie.id} className="w-50 flex flex-col grow">
             <Link href={`/Details/${movie.id}`}>
               <div className="mb-2 l">
                 <Image
@@ -22,10 +22,11 @@ export default async function TopCard({ which }: { which: string }) {
                   alt={movie.title}
                   width="350"
                   height="300"
+                  className="rounded-xl"
                 />
               </div>
             </Link>
-            <h2 className="text-2xl font-semibold">Title: {movie.title}</h2>
+            <h2 className="text-2xl font-semibold ml-2 text-gray-200">{movie.title}</h2>
           </div>
         ))}
       </div>
