@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import Back from "../Details/[id]/back"
+import Back from "../Details/[id]/back";
 
 export default async function Getmovies() {
   const res = await fetch(
@@ -11,7 +11,7 @@ export default async function Getmovies() {
   return (
     <div className="bg-black text-white px-5 py-5 tracking-wide">
       <div className="flex items-center justify-between">
-        <Back/>
+        <Back />
         <h1 className="text-3xl font-bold text-center mt-5 mb-5">
           2025 TMDB TOP
         </h1>
@@ -32,7 +32,10 @@ export default async function Getmovies() {
                 className=" w-full sm:w-[80%] h-full rounded-xl m-auto"
               />
             </Link>
-            <div className="sm:w-[50%] sm:overflow-y-scroll" style={{scrollbarWidth: "none"}}>
+            <div
+              className="sm:w-[50%] sm:overflow-y-scroll"
+              style={{ scrollbarWidth: "none" }}
+            >
               <h2 className="text-2xl font-semibold">{movie.title}</h2>
               <p>
                 <span className="text-xl">Language:</span>

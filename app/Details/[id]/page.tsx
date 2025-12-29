@@ -7,10 +7,10 @@ export default async function getMovie(props: {
 }) {
   const { id } = await props.params;
   const res1 = await fetch(
-    `https://api.themoviedb.org/3/movie/${id}?api_key=f63e41350dd22c182698ef9f64049a0b`
+    `https://api.themoviedb.org/3/movie/${id}?api_key=f63e41350dd22c182698ef9f64049a0b`, {next: { revalidate: 3600 }}
   );
   const res2 = await fetch(
-    `https://api.themoviedb.org/3/movie/${id}/videos?api_key=f63e41350dd22c182698ef9f64049a0b`
+    `https://api.themoviedb.org/3/movie/${id}/videos?api_key=f63e41350dd22c182698ef9f64049a0b`, {next: { revalidate: 3600 }}
   );
   const movies: any = await res1.json();
   const videos: any = await res2.json();

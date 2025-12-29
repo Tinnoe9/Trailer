@@ -1,9 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
+import next from "next";
 
 export default async function DailyCard({ which }: { which: string }) {
   const res = await fetch(
-    "https://api.themoviedb.org/3/trending/movie/day?api_key=f63e41350dd22c182698ef9f64049a0b"
+    "https://api.themoviedb.org/3/trending/movie/day?api_key=f63e41350dd22c182698ef9f64049a0b", {next: { revalidate: 3600 } }
   );
   const data = await res.json();
   const movies: any[] = data.results;

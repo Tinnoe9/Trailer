@@ -1,17 +1,18 @@
 import Link from "next/link";
 import Image from "next/image";
-import Back from "../Details/[id]/back"
+import Back from "../Details/[id]/back";
 
 export default async function Getmovies() {
   const res = await fetch(
-    "https://api.themoviedb.org/3/trending/movie/week?api_key=f63e41350dd22c182698ef9f64049a0b"
+    "https://api.themoviedb.org/3/trending/movie/week?api_key=f63e41350dd22c182698ef9f64049a0b",
+    { next: { revalidate: 3600 } }
   );
   const data = await res.json();
   const movies: any[] = data.results;
   return (
     <div className="bg-black text-white px-5 py-5 tracking-wide">
       <div className="flex items-center justify-between">
-        <Back/>
+        <Back />
         <h1 className="text-3xl font-bold text-center mt-5 mb-5">
           Weekly Top Movies
         </h1>

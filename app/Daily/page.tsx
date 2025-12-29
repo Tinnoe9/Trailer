@@ -3,7 +3,7 @@ import Image from "next/image";
 import Back from "../Details/[id]/back"
 export default async function Getmovies() {
   const res = await fetch(
-    "https://api.themoviedb.org/3/trending/movie/day?api_key=f63e41350dd22c182698ef9f64049a0b"
+    "https://api.themoviedb.org/3/trending/movie/day?api_key=f63e41350dd22c182698ef9f64049a0b", {next: { revalidate: 3600 }}
   );
   const data = await res.json();
   const movies: any[] = data.results;
